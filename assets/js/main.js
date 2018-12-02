@@ -320,7 +320,7 @@
                     template += '<i class="fa fa-clock-o" aria-hidden="true"></i> ' + exif["shutter_speed"] + '&nbsp;&nbsp;';
                 }
                 if (info === "iso") {
-                    template += '<i class="fa fa-info-circle" aria-hidden="true"></i> ' + exif["iso"] + '&nbsp;&nbsp;' + '<a href="https://brick-dev.github.io/blog/post%20formats/raw-image/"> Story </a>' ;
+                    template += '<i class="fa fa-info-circle" aria-hidden="true"></i> ' + '300' + exif["iso"] + '&nbsp;&nbsp;' + '<a href="https://brick-dev.github.io/blog/post%20formats/raw-image/"> Story </a>' ;
                 }
             }
             return template;
