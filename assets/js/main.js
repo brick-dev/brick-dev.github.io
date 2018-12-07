@@ -255,7 +255,7 @@
 
             // EXIF data					
             EXIF.getData($image_img[0], function () {
-                exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
+                exifDatas[$image_img.data('name')] = getExifDataMarkup($image_img.data('name'));
             });
 
         });
@@ -269,7 +269,7 @@
                 if (data === undefined) {
                     // EXIF data					
                     EXIF.getData($image_img[0], function () {
-                        data = exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
+                        data = exifDatas[$image_img.data('name')] = getExifDataMarkup($image_img.data('name'));
                     });
                 }
                 return data !== undefined ? '<p>' + data + '</p>' : ' ';
@@ -307,21 +307,27 @@
             });
 
         function getExifDataMarkup(img) {
-            var exif = fetchExifData(img);
-            var template = '';
-            for (var info in exif) {
-                if (info === "model") {
-                    template += '<i class="fa fa-camera-retro" aria-hidden="true"></i> ' + exif["model"] + '&nbsp;&nbsp;';
-                }
-                if (info === "aperture") {
-                    template += '<i class="fa fa-dot-circle-o" aria-hidden="true"></i> f/' + exif["aperture"] + '&nbsp;&nbsp;';
-                }
-                if (info === "shutter_speed") {
-                    template += '<i class="fa fa-clock-o" aria-hidden="true"></i> ' + exif["shutter_speed"] + '&nbsp;&nbsp;';
-                }
-                if (info === "iso") {
-                    template += '<i class="fa fa-info-circle" aria-hidden="true"></i> ' + '300' + exif["iso"] + '&nbsp;&nbsp;' + '<a href="https://brick-dev.github.io/blog/post%20formats/raw-image/"> Story </a>' ;
-                }
+            // var exif = fetchExifData(img);
+            // var template = '';
+            // for (var info in exif) {
+            //     if (info === "model") {
+            //         template += '<i class="fa fa-camera-retro" aria-hidden="true"></i> ' + exif["model"] + '&nbsp;&nbsp;';
+            //     }
+            //     if (info === "aperture") {
+            //         template += '<i class="fa fa-dot-circle-o" aria-hidden="true"></i> f/' + exif["aperture"] + '&nbsp;&nbsp;';
+            //     }
+            //     if (info === "shutter_speed") {
+            //         template += '<i class="fa fa-clock-o" aria-hidden="true"></i> ' + exif["shutter_speed"] + '&nbsp;&nbsp;';
+            //     }
+            //     if (info === "iso") {
+            //         template += '<i class="fa fa-info-circle" aria-hidden="true"></i> ' + '1900' + '&nbsp;&nbsp;' + '<a href="https://brick-dev.github.io/blog/post%20formats/raw-image/"> Story </a>' ;
+            //     }
+            // }
+            if (img.slice(8,-4).length == 0){
+                template = ''
+            }
+            else {
+                template = '<div style="font-family: Helvetica, sans-serif; font-size: 1.25em;"><i class="fa fa-angle-double-right" aria-hidden="true" style="color:#ffffff;"></i> <a href="https://brick-dev.github.io/blog/post%20formats/' + img.slice(8,-4) +'" style="color:#ffffff;"> Story ' + img.slice(8,-4) +' </a></div>'
             }
             return template;
         }

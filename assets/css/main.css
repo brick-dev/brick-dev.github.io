@@ -188,8 +188,8 @@
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
-		color: #34a58e;
+		/* border-bottom: dotted 1px; */
+		color: #ffffff;
 		text-decoration: none;
 	}
 
@@ -1993,3 +1993,6 @@
 		#footer .copyright a {
 			color: inherit;
 		}
+
+
+ 
