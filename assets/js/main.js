@@ -327,7 +327,7 @@
                 template = ''
             }
             else {
-                template = '<div style="font-family: Helvetica, sans-serif; font-size: 1.25em;"><i class="fa fa-angle-double-right" aria-hidden="true" style="color:#ffffff;"></i> <a href="https://brick-dev.github.io/blog/post%20formats/' + img.slice(8,-4) +'" style="color:#ffffff;"> Story ' + img.slice(8,-4) +' </a></div>'
+                template = '<div style="font-family: Helvetica, sans-serif; font-size: 1.25em;"> <a href="https://brick-dev.github.io/blog/post%20formats/' + img.slice(8,-4) +'" style="color:#ffffff;"> <i class="fa fa-angle-double-right" aria-hidden="true"></i> Story ' + img.slice(8,-4) +' </a></div>'
             }
             return template;
         }
